@@ -1,0 +1,33 @@
+.panel {
+  position: fixed;
+  width: 100%;
+  height: 548px;
+  top: 20px;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y:scroll;
+}
+
+.panel ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.panel ol img {
+  max-width: 100%;
+}
+
+@-webkit-keyframes slideInLeft {
+  0%   {-webkit-transform:translate3d(320px,0,0)}
+  100% {-webkit-transform:translate3d(0,0,0)}
+}
+
+.slideInLeft {
+  -webkit-animation: slideInLeft .25s cubic-bezier(.12,0,.17,1) 0 1
+}
+
+
+
+
+
