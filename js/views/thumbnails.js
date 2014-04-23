@@ -36,7 +36,7 @@
       this.thumbnails.data.forEach(function (post) {
         var img = new Image();
         var imgDeffered = $.Deferred();
-        img.onload = imgDeffered.resolve;
+        img.onload = imgDeffered.resolve();
         img.src = post.images.low_resolution.url;
         
         imgDeffereds.push(imgDeffered);
@@ -45,8 +45,8 @@
       }); 
       html += '</ol></div>';
       
-      $.when.apply(imgDeffereds, $).then(function () {
-        self.$el.delay(1000).append(html);
+      $.when.apply($, imgDeffereds).then(function () {
+        self.$el.append(html);
       });
     }
 
